@@ -1,0 +1,49 @@
+.task-list {
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.task-list-header {
+  margin-top: 0;
+  position: sticky;
+  top: 0;
+  background-color: #7FC5F3;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.task-item {
+  padding: 10px;
+  padding-top: 30px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: top 0.3s;
+}
+
+.task-checkbox {
+  margin-right: 10px;
+}
+
+.filter-dropdown {
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.no-tasks-message {
+  text-align: center;
+}

@@ -1,0 +1,27 @@
+<!-- In task-list.component.html -->
+<div class="task-list">
+  <div *ngIf="tasks.length > 0" class="task-list-header">
+    <h2 >
+      Task List
+    </h2>
+      <select [(ngModel)]="filterStatus" class="filter-dropdown">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="incomplete">Incomplete</option>
+      </select>
+  </div>
+
+  <ul  *ngIf="tasks.length > 0">
+    <li *ngFor="let task of filteredTasks(); let i = index" class="task-item">
+      <input type="checkbox"
+             [checked]="task.completed"
+             (change)="toggleCompletion(task.id)"
+             class="task-checkbox" />
+      {{ task.title }}
+    </li>
+
+    <ng-container *ngIf="noTasksOrNoCompletedTasks()">
+      <p class="no-tasks-message">No tasks</p>
+    </ng-container>
+  </ul>
+</div>
